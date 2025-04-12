@@ -25,8 +25,16 @@ LOGS =>
 #####
 
 */
+//I: function that takes one param repped as number
+//O: log hashtags, that form triangle, the length and width based on input number
+//C:none
+//E: none
 
-function triangles() {
+function triangles(num) {
+  //init for loop
+  for(let i = 1; i <= num; i++)
+   // conditional stmt to guide the console.log
+    if()
   
 }
 
