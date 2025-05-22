@@ -35,7 +35,7 @@ function isEven(num, output = 0) {
   //E: works on negative numbers
   //base
    //create a positive number for num 
-   n = Math.abs(num);
+   num = Math.abs(num);
    //base
    //conditional stmt num strictly equal to zero
    if(num === 0){
@@ -58,7 +58,22 @@ function isEven(num, output = 0) {
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
+function countChars(str, char) {
+  //I: function takes two params repped as strings,  input string(str) and comparison string(char)
+  //O: return number that quantifies the number of times char appears in str
+  //C: none 
+  //E: string as a space ' ', stings with no space''
+  // init variable to hold the count
+  let count = 0;
+  // iterate over string
+  for( let i = 0; i < str.length; i++){
+    // conditional stmt to detemine how many times char appears
+    if(str[i] === char){
+      count ++
+    }
+  } 
+  // return results of for loop and if stmt
+  return count;
 
 }
 
@@ -66,7 +81,22 @@ function countChars() {
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
+function countBs(str) {
+   //I: function takes one param repped as strings
+  //O: return number that quantifies the number of times 'B' appears in str
+  //C: none 
+  //E: string as a space ' ', stings with no space''
+  // init variable to hold the count
+  let count = 0;
+  // iterate over string
+  for( let i = 0; i < str.length; i++){
+    // conditional stmt to detemine how many times 'B' appears
+    if(str[i] === 'B'){
+      count ++
+    }
+  } 
+  // return results of for loop and if stmt
+  return count;
 
 }
 
