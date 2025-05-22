@@ -31,12 +31,19 @@ LOGS =>
 //E: none
 
 function triangles(num) {
-  //init for loop
-  for(let i = 1; i <= num; i++)
-   // conditional stmt to guide the console.log
-    if()
+  //init var as empty string to contain results of addding to the string 
+  let tri = '';
   
-}
+  //init for loop to add to string 
+  for(let i = 1; i <= num; i++){
+   // add the pound sign to the string 
+    tri += '#';
+    //console.log the variable 
+    console.log(tri);
+  }
+};
+  
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -56,6 +63,32 @@ on the number:
 */
 
 function fizzBuzz(start, end) {
+    //I: function that takes in  two params , start and end, repped as numbers 
+    //O: prints numbers betweeen start and end, for numbers divisible by 3 fizz prints, 
+    //   numbers divisible by five buzz prints,divisible by  3 & 5 FizzBuzz prints, all else the number prints
+    //C: none
+    //E: none
+    //init loop that counts between start and end
+    for(let i = start; i <= end; i++){
+    //create conditional statements to print 1-100
+        if(i % 3 !== 0 && i % 5 !== 0){
+            console.log(i);
+        }
+        // create independent conditional stmts for multiples of three print “Fizz”
+         if(i % 3 === 0 && i % 5 !== 0){ 
+            console.log('fizz');
+        }
+        // create independent conditional stmts for multiples of five print “Buzz”
+         if(i % 5 === 0 && i % 3 !== 0){ 
+            console.log('buzz');
+        }
+        // create independent conditional stmts for multiples of three and five print “FizzBuzz”
+        if(i % 5 === 0 && i % 3 === 0){ 
+                        console.log('fizzbuzz');
+        }
+    
+    } 
+
   
 }
 
@@ -90,9 +123,32 @@ LOGS =>
 */
 
 function drawChessboard(x) {
+    //I: function takes in one param x, repped as number that represents the size of the chessboard 
+    //O: return strings that alternates spaces and #s  that is the length and with of x 
+    //C: none
+    //E: must start with space 
+    //init var chess as empty string to contain results 
+    let chess = ''
+    // init two for loops, the first loop for the outer for loop to add the new line  
+        for(let i = 0; i < x; i++){
+          //the second for loop to alternate between evens and odds for hashtag and space placement 
+          for(let j = 0; j < x; j++){
+            // conditional stmt to determine when to add space or # to the string based on even and odss 
+          if((i + j) % 2 === 0){
+            chess += ' ';
+          } else {
+            chess += '#';
+             }
+         
+        }// add new line  
+          chess += "\n"
+        }
+      
+   console.log(chess);
+  };
 
 
-}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
