@@ -2,34 +2,104 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range() {
-
-}
+function range(start, end, step) {
+  
+    //I: function takes in 3 numbers, the first 2 numbers indicates the range the third number indicates the steps between the numbers
+    //O: return an array of numbers  between the first two input numbers, with steps if step number is given 
+    //C: none
+    //E: should work with negative steps, same numbers in the range
+    // init var as empty array to hold results
+    let output = [];
+    // conditional stmt if start and end are strictly equal return empty array
+    if(start === end){
+      return output;
+    }
+    // create stmt if  function  is called with two params
+  if(step === undefined){
+       //init loop to itertate over randge and push integers into ouput array
+      for(var i = start; i <= end; i++){
+           // push integers into output array
+          output.push(i);
+      }
+      // conditional stmt to increment by step if step is present and positive
+  } if(step > 0){
+        for(let i = start; i <= end; i += step){
+          output.push(i);
+        }
+      }
+      // return output 
+      return output;
+   
+  };
 
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function sum() {
+function sum(array) {
+  //I: function takes an input array of numbers
+  //O: return number that totals the sum of the integers in the array
+  //C: none
+  //E: works with negaive integers, if array is empty 
+  // init variable to contain results
+  let sum = 0;
+  if (array.length === 0){
+    return 0;
+  } else{
+    for(let i = 0; i < array.length; i++){
+      sum += array[i]
+    }
+    return sum;
+  }
+
 
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArray ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
-function reverseArray() {
+function reverseArray(array) {
+  //I: function takes an array 
+  //O: return a new array with the indices in reverse order
+  //C: none
+  //E: must work with large arrays, input array is empty
+  // init var as empty array for results
+  let output = [];
+  // determine if in put array is empty
+  if(array.length === 0){
+    return [];
+  }
+     for(let j = 0; j < array.length; j++){
+         console.log(j);
+         output.unshift(array[j]);
+       }
+    
+return output;
 
 }
+//console.log(reverseArray([2, 4, 6]));
+console.log(reverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace() {
-
+function reverseArrayInPlace(array) {
+  //I: function take an array as param
+  //O: function returns input array with indices in the reverse order
+  //C:none
+  //E:needs to work on large array 
+  // init for loop
+for (let i = 0; i < array.length; i++) {
+  // use splice to remove the index at i, delete count is zero, add the last index to the begginging of the array
+    array.splice(i, 0, array.pop());
 }
-
+//return array
+  return array
+}
 ////////////////////////////////////////////////////////////////////////////////
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
