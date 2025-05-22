@@ -2,7 +2,25 @@
 // min /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function min() {
+function min(x, y) {
+  //I: function takes two params repped as numbers
+  //O: returns the smaller of two numbers
+  //C: none
+  //E: works with negative numbers
+  // conditional stmts to determine which value is smaller and return the smaller number
+  if(x < y){
+    return x;
+  }
+  if(x > y){
+    return y;
+  }
+  if(x < 0 && y < 0 && x > y){
+    return y;
+  }
+  if( x === y){
+    return x
+  }
+
 
 }
 
@@ -10,7 +28,29 @@ function min() {
 // isEven //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function isEven() {
+function isEven(num, output = 0) {
+  //I:function takes one param repped as number, default param repped as number
+  //O: returns boolean true if even and false if odd
+  //C: none
+  //E: works on negative numbers
+  //base
+   //create a positive number for num 
+   n = Math.abs(num);
+   //base
+   //conditional stmt num strictly equal to zero
+   if(num === 0){
+     //return true
+     return true;
+   }
+   //conditional stmt num strictly equals 1
+   if(num === 1){
+     //return false
+     return false;
+   }
+   //recursion
+   //invoke function subtracting 2 from num 
+   return isEven(num - 2);
+
 
 }
 
