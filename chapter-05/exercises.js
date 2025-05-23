@@ -9,7 +9,7 @@ function flatten(arrays) {
   //E: must be in original order
   // return results of reducing over array 
  return arrays.reduce((acc, curr) =>{
-    // return acc conactenating curr
+    // return acc adding curr at each iteration
     return acc.concat(curr);
     
   },[]);
@@ -61,7 +61,34 @@ function every(array, func) {
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-  function dominantDirection(text) {
+  function dominantDirection(string) {
+    //I: function takes string as input 
+    //O: return string 'ltr', 'rtl' based on how many strings read rtl or ltr, return the largerr of the two 
+    //C: none
+    //O: none
+    //create a variable ltr and initialize as empty array
+    let ltr = [];
+    // create a var rtl and initialize as an empty array 
+    let rtl = [];
+    // iterate thourh input string using for loop
+    for(let i = 0; i < string.length; i++){
+      // create a variable called script and assign it the result of invoking characterscript on the current characters char code
+      // determines the type of script the character is 
+      let script = characterScript(string.charCodeAt(i))//access each indiviual character code returns object
+      // determine if character is in the array
+        if( script !== null){
+          if(script.direction === 'ltr'){// if script object has direction key and value of 'ltr'  
+            ltr.push(script);// push object into ltr  array
+          } else {// else push object into rtl  array
+            rtl.push(script); 
+          }
+        }
+    }// determine which array is larger
+    if(ltr.length > rtl.length){
+      return 'ltr';// return 'ltr' 
+    }else{
+      return 'rtl'// return 'rtl'
+    }  
   }
 
   
