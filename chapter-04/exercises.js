@@ -143,9 +143,19 @@ function listToArray(list, array = []) {
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function prepend(list, array = []) { 
- 
-}
+function prepend(unknown, func) { 
+    //I: function takes an unknown value to be inserted at the first position, and the array to list function as params   
+    //O: returns arrayTolist function with unknown added to the front of the input array 
+    //C: none
+    //E: none
+    
+    return func(array.unshift(unknown));
+  };
+  console.log(prepend(12, arrayToList([1, 2, 7])));/// arrayToList[12, 1, ,7]
+  
+
+
+
   
 
 
