@@ -143,15 +143,22 @@ function listToArray(list, array = []) {
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function prepend(unknown, func) { 
-    //I: function takes an unknown value to be inserted at the first position, and the array to list function as params   
-    //O: returns arrayTolist function with unknown added to the front of the input array 
-    //C: none
-    //E: none
+function prepend(unknown, list) { 
     
-    return func(array.unshift(unknown));
-  };
-  console.log(prepend(12, arrayToList([1, 2, 7])));/// arrayToList[12, 1, ,7]
+    //I: function takes an value(unknown) to be added to the top of  list, and list  
+  //O: returns an object with the indices of the array as values 
+  //C: none
+  //E: none 
+  // convert the list to an array using listTo Array,
+   let array1 = listToArray(list);
+   
+//then add the unknown value to the array using unshift,
+   array1.unshift(unknown);
+  
+//then convert back to list using arrayToList
+   return arrayToList(array1);
+ }
+  
   
 
 
@@ -164,7 +171,15 @@ function prepend(unknown, func) {
 // nth /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function nth() {
+function nth(list, n) {
+  //I: function takes two params list(list) and n(number) indicates the location of the value that is to be accessed,
+  //O: return value located n
+  //C: none
+  //E: none 
+  // convert list to an array 
+  let array1 = listToArray(list);
+  //return array value located at n
+  return array1[n];
 
 }
 
