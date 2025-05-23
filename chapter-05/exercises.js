@@ -63,7 +63,7 @@ function every(array, func) {
 
   function dominantDirection(string) {
     //I: function takes string as input 
-    //O: return string 'ltr', 'rtl' based on how many strings read rtl or ltr, return the largerr of the two 
+    //O: return string 'ltr', 'rtl' based on how many strings read rtl or ltr, return the larger of the two 
     //C: none
     //O: none
     //create a variable ltr and initialize as empty array
