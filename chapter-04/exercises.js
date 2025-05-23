@@ -172,8 +172,28 @@ function nth() {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
-
+function deepEqual(x, y) {
+  // determine if x and y are not objects(determines if simple data )
+  if (typeof x !== 'object' && typeof y !== 'object'){
+    return x === y;
+   }// deterine if x or y is not an object(check to see if one of the items is complex and the other is simple)
+   if(typeof x !== 'object' || typeof y !== 'object' ){
+    return false;
+   }
+   //create arrays of each inputs keys 
+   let yKeys = Object.keys(y);
+   let xKeys = Object.keys(x);
+   if (xKeys.length !== yKeys.length){
+    return false;
+   }
+   //iterate to determien if array keys match and values at keys match 
+   for(let i = 0; i < xKeys.length; i++){
+    //determine if the current key is not included in yKeys 
+    if(yKeys.includes.apply(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])){ 
+      return false;
+   }
+   }
+ return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
