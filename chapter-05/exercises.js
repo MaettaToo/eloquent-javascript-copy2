@@ -2,17 +2,40 @@
 // flatten /////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function flatten() {
-
+function flatten(arrays) {
+  //I: function takes an array of arrays as input 
+  //O: return an array with all of the input arrays elements as indexes 
+  //C: none
+  //E: must be in original order
+  // return results of reducing over array 
+ return arrays.reduce((acc, curr) =>{
+    // return acc conactenating curr
+    return acc.concat(curr);
+    
+  },[]);
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // loop ////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function loop() {
+  function loop(value, test, update, execute) {
+    //I: funtion takes in 4 params, input value, 3 functions, a function to test the value, 
+    //function to update the value, function to execute the value
+    //O: return changed value
+    //C: none
+    //E:none
+    //base
+    //conditional stmt invoking test function on value  
+    if (test(value)) {
+      // if true invoke execute function on value
+      execute(value);
+      //recursion
+      //recursion begins invoke loop, using invoking update function on value, test, update, execute as params
+      return loop(update(value), test, update, execute);
+    } // else stop
+  }
 
-}
 
 // /////////////////////////////////////////////////////////////////////////////
 // every ///////////////////////////////////////////////////////////////////////
